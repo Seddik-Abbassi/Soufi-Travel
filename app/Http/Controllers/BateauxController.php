@@ -96,21 +96,43 @@ class BateauxController extends Controller
     {
         require base_path("vendor/autoload.php");
 
+        $name = htmlentities($request->name);
+        $email = htmlentities($request->email);
+        $radiotrip = htmlentities($request->radiotrip);
+
         $from = htmlentities($request->from);
         $to = htmlentities($request->to);
         $datestart = htmlentities($request->datestart);
         $dateend = htmlentities($request->dateend);
         $adult = htmlentities($request->adult);
         $child = htmlentities($request->child);
-        $name = htmlentities($request->name);
-        $email = htmlentities($request->email);
-        $radiotrip = htmlentities($request->radiotrip);
+
         $moyen = htmlentities($request->moyen);
         $marque = htmlentities($request->marque);
         $modele = htmlentities($request->moyen);
         $longueur = htmlentities($request->longueur);
         $hauteur = htmlentities($request->hauteur);
         $largeur = htmlentities($request->largeur);
+
+        // When we use Voyage Retour différent
+
+        if($radiotrip == 'Voyage retour différent'){
+            $from1 = htmlentities($request->from1);
+            $to1 = htmlentities($request->to1);
+            $datestart1 = htmlentities($request->datestart1);
+            $dateend1 = htmlentities($request->dateend1);
+            $adult1 = htmlentities($request->adult1);
+            $child1 = htmlentities($request->child1);
+            $moyen1 = htmlentities($request->moyen1);
+            $marque1 = htmlentities($request->marque1);
+            $modele1 = htmlentities($request->moyen1);
+            $longueur1 = htmlentities($request->longueur1);
+            $hauteur1 = htmlentities($request->hauteur1);
+            $largeur1 = htmlentities($request->largeur1);
+        }
+
+
+
 
 
 
@@ -135,6 +157,10 @@ class BateauxController extends Controller
 
             $mail->Subject = "Booking demand from : ".$name;
             $mail->Body    = "<span style='font-size: 1.3em;font-weight: bold'> $name ($email) want to travel : $radiotrip</span><p>From $from to $to</p><p>Arrivée : $datestart - Départ : $dateend</p><p>Adultes  : $adult - Enfants : $child</p><p>Moyen de transport  : $moyen&nbsp;(Marque: $marque, Modèle: $modele, Longueur : $longueur , Hauteur : $hauteur , Largeur : $largeur)</p>";
+
+            if($radiotrip == 'Voyage retour différent'){
+                $mail->Body .= "<p>From $from1 to $to1</p><p>Arrivée : $datestart1 - Départ : $dateend1</p><p>Adultes  : $adult1 - Enfants : $child1</p><p>Moyen de transport  : $moyen1&nbsp;(Marque: $marque1, Modèle: $modele1, Longueur : $longueur1 , Hauteur : $hauteur1 , Largeur : $largeur1)</p>";
+            }
 
             // $mail->AltBody = plain text version of email body;
 

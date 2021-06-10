@@ -34,8 +34,8 @@
                                                         <label class="form-check-label" for="inlineRadio2">Voyage aller simple</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="radiotrip" id="inlineRadio3" value="Voyage aller simple">
-                                                        <label class="form-check-label" for="inlineRadio2">Détails différents</label>
+                                                        <input class="form-check-input" type="radio" name="radiotrip" id="inlineRadio3" value="Voyage retour différent">
+                                                        <label class="form-check-label" for="inlineRadio3">Voyage Retour différent</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-xxs-12 col-xs-6 mt">
@@ -94,7 +94,7 @@
                                                     </select>
                                                 </section>
                                             </div>
-                                            <div class="col-xs-12">
+                                            <div class="col-xs-12" style="margin-bottom: 30px">
                                                 <section>
                                                     <label for="moyen">Votre moyen de Transport</label>
                                                     <select class="cs-select cs-skin-border" id="moyenid" name="moyen">
@@ -109,6 +109,73 @@
                                                     </select>
                                                 </section>
                                             </div>
+
+
+                                                <div class="hidden" id="retourdifferent">
+                                                    <h4 style="margin-left: 20px;font-weight: bold">Retour Différent</h4>
+                                                    <div class="col-xxs-12 col-xs-6 mt">
+                                                        <div class="input-field">
+                                                            <label for="from-place">De</label>
+                                                            <input type="text" class="form-control" name="from1" id="from-place" placeholder="Los Angeles, USA"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxs-12 col-xs-6 mt">
+                                                        <div class="input-field">
+                                                            <label for="to-place">Vers</label>
+                                                            <input type="text" class="form-control" name="to1" id="to-place" placeholder="Tokyo, Japan"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                        <div class="input-field">
+                                                            <label for="date-start">Arrivée</label>
+                                                            <input type="text" class="form-control" name="datestart1" id="date-start" placeholder="mm/dd/yyyy"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                        <div class="input-field">
+                                                            <label for="date-end">Départ</label>
+                                                            <input type="text" class="form-control" name="dateend1" id="date-end" placeholder="mm/dd/yyyy"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxs-12 col-xs-6 mt">
+                                                        <section>
+                                                            <label for="adult1">Adultes</label>
+                                                            <select class="cs-select cs-skin-border" name="adult1">
+                                                                @for($i = 1; $i<11; $i++)
+                                                                    <option value="{{$i}}">{{$i}}</option>
+                                                                @endfor
+                                                            </select>
+                                                        </section>
+                                                    </div>
+                                                    <div class="col-xxs-12 col-xs-6 mt">
+                                                        <section>
+                                                            <label for="child1">Enfants&nbsp;<span class="badge bg-success">-12 ans</span></label>
+                                                            <select class="cs-select cs-skin-border" name="child1">
+                                                                @for($i = 0; $i<11; $i++)
+                                                                    <option value="{{$i}}">{{$i}}</option>
+                                                                @endfor
+                                                            </select>
+                                                        </section>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <section>
+                                                            <label for="moyen1">Votre moyen de Transport</label>
+                                                            <select class="cs-select cs-skin-border" id="moyenid1" name="moyen1">
+                                                                <option value="0">Quel est votre moyen de Transport?</option>
+                                                                <option value="Passager piéton">Passager piéton</option>
+                                                                <option value="Vélo">Vélo</option>
+                                                                <option value="Voiture" class="showmark">Voiture</option>
+                                                                <option value="Camping-car" class="showmark">Camping-car</option>
+                                                                <option value="Moto" class="showmark">Moto</option>
+                                                                <option value="Minibus" class="showmark">Minibus</option>
+                                                                <option value="Fourgonnette" class="showmark">Fourgonnette</option>
+                                                            </select>
+                                                        </section>
+                                                    </div>
+                                                </div>
+
+
+
                                             <div class="col-xs-12 hidden" id="markpart" style="margin-top: 15px">
                                                 <label for="marque">Marque</label>
                                                 <input type="text" class="form-control" name="marque" placeholder="Marque"/>
