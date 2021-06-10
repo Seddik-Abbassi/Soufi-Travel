@@ -140,24 +140,24 @@
 
         <header id="fh5co-header-section" class="sticky-banner">
             <div class="container">
-
                 <div class="nav-header" style="margin-top: 30px;margin-bottom: 15px">
                     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-                    <a href="{{ url(app()->getLocale(),'') }}"><img src="{{ asset('images/logo2.png') }}" alt="" width="185px" style="float: left"></a>
+                    <a href="{{ url(app()->getLocale(),'') }}"><img src="{{ asset('images/logo2.png') }}" alt="" width="185px" style="float: left;margin-right: 20px"></a>
+                    <span style="display:inline-block;float: left;font-weight: bold;margin-top: 10px">
+                        +41445236802&nbsp;&nbsp;&nbsp;contact@soufitravel.ch
+                    </span>
                     <!-- START #fh5co-menu-wrap -->
-                    <nav id="fh5co-menu-wrap" role="navigation" style="float: right !important;margin-left: 106px;margin-top: -10px;">
-                        <ul class="sf-menu" id="fh5co-primary-menu" style="align-content: center">
+                    <nav id="fh5co-menu-wrap" role="navigation" style="float: right !important;margin-top: -10px;">
+                        <ul class="sf-menu" id="fh5co-primary-menu" style="align-content: center;padding-left: 50px;">
                             <li class="active"><a href="{{ url(app()->getLocale(),'') }}">@lang('message.home')</a></li>
                             <li><a href="{{ url(app()->getLocale(),'about') }}">@lang('message.about')</a></li>
                             <li><a href="{{ url(app()->getLocale(),'contact') }}">@lang('message.contact')</a></li>
-                            <li style="padding-left: 200px"><a href="{{ url('fr') }}">FR</a></li>
-                            <li><a href="{{ url('en') }}">EN</a></li>
-                            <li><a href="{{ url('du') }}">DE</a></li>
+                            <li style="padding-left: 100px"><a href="{{ url('fr') }}" style="display: inline-block;padding-left: 0 !important;">FR</a></li>
+                            <li><a href="{{ url('en') }}" style="display: inline-block;padding-left: 0 !important;">EN</a></li>
+                            <li><a href="{{ url('du') }}" style="display: inline-block;padding-left: 0 !important;">DE</a></li>
                         </ul>
                     </nav>
                 </div>
-
-
             </div>
         </header>
         <!-- end:header-top -->
